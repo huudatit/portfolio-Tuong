@@ -9,6 +9,7 @@ const translations = {
     nav_contact: "Liên Hệ",
 
     // Hero Section
+    hero_slogan: "Quảng cáo sạch - tăng trưởng xanh",
     hero_title: "Nhà quảng cáo tập trung vào hiệu suất",
     hero_desc:
       "Trong khi số đông vội vã chạy quảng cáo và đối mặt với rủi ro lãng phí ngân sách, tôi chọn bắt đầu từ gốc: Định hình chính xác chân dung khách hàng mục tiêu. Tôi từ chối việc 'đốt tiền' vào những lượt click vô giá trị, để đảm bảo mỗi đồng chi ra đều mang về tỷ lệ chuyển đổi thực tế.",
@@ -19,13 +20,13 @@ const translations = {
     // About Section
     about_title: "Về Tôi",
     about_p1:
-      "<span class='text-blue-600 text-4xl font-serif inline-block h-0 leading-[0] translate-y-2 mr-1'>“</span>Tôi là một nhà quảng cáo tập trung vào hiệu suất với hơn 2 năm kinh nghiệm thực chiến trong lĩnh vực Affiliate Marketing.",
+      "<span class='brand-gold-text text-4xl font-serif inline-block h-0 leading-[0] translate-y-2 mr-1'>“</span>Tôi là một nhà quảng cáo tập trung vào hiệu suất với hơn 2 năm kinh nghiệm thực chiến trong lĩnh vực Affiliate Marketing.",
     about_p2:
       "Bước vào thị trường từ năm 20 tuổi, tôi đã quen với việc tự chịu trách nhiệm trên từng đồng chi phí quảng cáo mà mình bỏ ra. Chính môi trường cạnh tranh khốc liệt của Affiliate đã rèn luyện cho tôi một bộ tư duy tối ưu chi phí và bám sát chuyển đổi thực tế. Trong 2 năm qua, tôi chọn Google Search Ads làm phương tiện chủ đạo trên hành trình tìm kiếm khách hàng của mình, nơi một cuộc chơi đòi hỏi sự chính xác tuyệt đối trong việc thấu hiểu nhu cầu tìm kiếm của người dùng.",
     about_p3:
       "Nhiều người nghĩ tuổi 22 là quá trẻ để quản lý những chiến dịch lớn, nhưng với tôi, đó lại là một lợi thế. Tuổi trẻ cho tôi sự nhạy bén để bắt kịp các xu hướng nội dung số mới nhất. Kết hợp với tư duy kỹ thuật logic, tôi có khả năng tự mình hoàn thiện một quy trình khép kín: từ phân tích kỹ thuật, tối ưu chiến dịch cho đến tự tay thiết kế những thông điệp chạm đến nỗi đau của khách hàng và giải quyết nó.",
     about_p4:
-      "Tôi tin rằng quảng cáo đỉnh cao không phải là kỹ thuật phức tạp, mà là mang đúng giải pháp đến người đang <span class='whitespace-nowrap'>tìm kiếm nó.<span class='text-blue-600 text-4xl font-serif inline-block h-0 leading-[0] translate-y-2 ml-1'>”</span></span>",
+      "Tôi tin rằng quảng cáo đỉnh cao không phải là kỹ thuật phức tạp, mà là mang đúng giải pháp đến người đang <span class='whitespace-nowrap'>tìm kiếm nó.<span class='brand-gold-text text-4xl font-serif inline-block h-0 leading-[0] translate-y-2 ml-1'>”</span></span>",
     about_exp: "Năm Kinh Nghiệm",
     about_val_title: "Tôn Chỉ",
     about_val1: "Dữ liệu minh bạch",
@@ -59,7 +60,7 @@ const translations = {
     contact_btn: "Gửi Email",
 
     // Footer
-    footer_copy: "© 2026 Ibutuong. All rights reserved.",
+    footer_copy: "© 2026 Bui Ngoc Tuong. All rights reserved.",
   },
   en: {
     // Nav & General
@@ -70,6 +71,7 @@ const translations = {
     nav_contact: "Contact",
 
     // Hero Section
+    hero_slogan: "Clean advertising - Green growth",
     hero_title: "Performance-Focused Advertiser",
     hero_desc:
       "While the majority rush to run ads and face the risk of wasted budgets, I choose to start from the root: Accurately defining the target customer persona. I refuse to 'burn money' on worthless clicks, ensuring every penny spent brings actual conversion rates.",
@@ -120,7 +122,7 @@ const translations = {
     contact_btn: "Send Email",
 
     // Footer
-    footer_copy: "© 2026 Ibutuong. All rights reserved.",
+    footer_copy: "© 2026 Bui Ngoc Tuong. All rights reserved.",
   },
 };
 

@@ -1,15 +1,107 @@
 /* css/styles.css */
+
+/* =============================================
+   BRAND COLOR SYSTEM — Logo: Navy + Gold
+   ============================================= */
+:root {
+  --brand-navy:       #1a2744;   /* primary dark — replaces slate-900 in hero sections */
+  --brand-navy-light: #243257;   /* slightly lighter navy for hover states */
+  --brand-gold:       #C9A84C;   /* primary accent — replaces yellow */
+  --brand-gold-light: #E8C96A;   /* lighter gold for hover/glow */
+  --brand-gold-pale:  #FBF4E0;   /* very light gold for backgrounds */
+  --brand-blue:       #1e3a8a;   /* deep brand blue — replaces blue-600 in key areas */
+  --brand-blue-mid:   #2563eb;   /* mid blue for interactive elements */
+}
+
 body {
   font-family: "Inter", sans-serif;
 }
 
-/* Tối ưu hóa thanh cuộn cho Webkit (Chrome, Safari, Edge) */
-::-webkit-scrollbar {
-  width: 12px;
+.font-paytone {
+  font-family: "Paytone One", sans-serif;
 }
 
-/* Firefox */
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 12px; }
 html {
   scrollbar-width: thin;
-  scrollbar-color: black white;
+  scrollbar-color: var(--brand-navy) #f1f5f9;
+}
+
+/* =============================================
+   BRAND UTILITY CLASSES
+   ============================================= */
+
+/* Slogan badge — hero */
+.brand-badge {
+  background-color: var(--brand-gold);
+  color: var(--brand-navy);
+  border: 1px solid var(--brand-gold-light);
+}
+
+/* Dark stat / value cards (About section) */
+.brand-card-dark {
+  background-color: var(--brand-navy);
+}
+
+/* Gold accent text */
+.brand-gold-text {
+  color: var(--brand-gold);
+}
+
+/* Primary CTA button */
+.brand-btn-primary {
+  background-color: var(--brand-navy);
+  color: #fff;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+.brand-btn-primary:hover {
+  background-color: var(--brand-navy-light);
+  box-shadow: 0 8px 24px rgba(26, 39, 68, 0.25);
+}
+
+/* Blue CTA (hero "Hợp Tác Ngay") */
+.brand-btn-blue {
+  background-color: var(--brand-blue);
+  color: #fff;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+.brand-btn-blue:hover {
+  background-color: var(--brand-navy);
+  box-shadow: 0 8px 24px rgba(30, 58, 138, 0.30);
+}
+
+/* Gold hover border on expertise cards */
+.expertise-card:hover {
+  border-color: var(--brand-gold) !important;
+  box-shadow: 0 20px 40px rgba(201, 168, 76, 0.12);
+}
+
+/* Icon circle turns navy on hover */
+.icon-circle-hover:hover,
+.group:hover .icon-circle-group {
+  background-color: var(--brand-navy) !important;
+  color: #fff !important;
+}
+
+/* Contact section hover glow */
+.contact-card:hover {
+  border-color: rgba(201, 168, 76, 0.4) !important;
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.08);
+}
+
+/* Nav name hover */
+.nav-name:hover {
+  color: var(--brand-blue) !important;
+}
+
+/* Nav links & footer links hover */
+.nav-link:hover,
+.footer-link:hover {
+  color: var(--brand-blue) !important;
+}
+
+/* Gold dot bullet */
+.dot-gold {
+  background-color: var(--brand-gold);
 }

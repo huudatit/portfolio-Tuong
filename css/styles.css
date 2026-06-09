@@ -1,0 +1,15 @@
+/* css/styles.css */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Tối ưu hóa thanh cuộn cho Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: black white;
+}

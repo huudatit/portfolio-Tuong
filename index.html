@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="vi" class="scroll-smooth scroll-pt-20">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bùi Ngọc Tường</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/i18n.js" defer></script>
+    <script src="js/main.js" defer></script>
+  </head>
+
+  <body class="bg-[#f8f9ff] text-slate-900">
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-100">
+      <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <a href="#home" class="font-bold text-xl tracking-tighter text-slate-900 hover:text-blue-600 transition-colors">
+          Bùi Ngọc Tường
+        </a>
+
+        <div class="hidden md:flex gap-8 text-sm font-medium text-slate-500">
+          <a href="#home" data-i18n="nav_home" class="hover:text-blue-600 transition-colors">Trang Chủ</a>
+          <a href="#about" data-i18n="nav_about" class="hover:text-blue-600 transition-colors">Về Tôi</a>
+          <a href="#expertise" data-i18n="nav_expertise" class="hover:text-blue-600 transition-colors">Chuyên Môn</a>
+          <a href="#partners" data-i18n="nav_partners" class="hover:text-blue-600 transition-colors">Đối Tác</a>
+          <a href="#contact" data-i18n="nav_contact" class="hover:text-blue-600 transition-colors">Liên Hệ</a>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <button id="lang-toggle" class="flex items-center gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 px-3 py-2 md:px-4 md:py-2.5 rounded-full text-sm font-bold transition-all shadow-sm">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 text-blue-600">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
+            </svg>
+            <span id="lang-text">VIE</span>
+          </button>
+
+          <button id="menu-open-btn" class="md:hidden text-slate-900 p-2 focus:outline-none">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div id="mobile-menu" class="fixed inset-y-0 right-0 z-[60] w-full max-w-sm bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col">
+      <div class="flex justify-end p-6">
+        <button id="menu-close-btn" class="text-black-700 p-2 focus:outline-none hover:bg-slate-50 hover:text-blue-700 rounded-full transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-8 h-8">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      <div class="flex flex-col gap-8 px-10 pt-4 text-slate-500 font-medium">
+        <a href="#home" data-i18n="nav_home" class="mobile-link text-lg hover:text-blue-600 transition-colors uppercase tracking-wide">Trang chủ</a>
+        <a href="#about" data-i18n="nav_about" class="mobile-link text-lg hover:text-blue-600 transition-colors uppercase tracking-wide">Về Tôi</a>
+        <a href="#expertise" data-i18n="nav_expertise" class="mobile-link text-lg hover:text-blue-600 transition-colors uppercase tracking-wide">Chuyên Môn</a>
+        <a href="#partners" data-i18n="nav_partners" class="mobile-link text-lg hover:text-blue-600 transition-colors uppercase tracking-wide">Đối Tác</a>
+        <a href="#contact" data-i18n="nav_contact" class="mobile-link text-lg hover:text-blue-600 transition-colors uppercase tracking-wide">Liên Hệ</a>
+      </div>
+    </div>
+    <div id="mobile-overlay" class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[55] hidden md:hidden transition-opacity opacity-0"></div>
+
+    <header id="home" class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-blue-600 font-bold text-5xl uppercase tracking-widest mb-4 block">Bùi Ngọc Tường</span>
+        <h1 data-i18n="hero_title" class="text-5xl md:text-3xl font-bold leading-tight mb-6">Nhà quảng cáo tập trung vào hiệu suất</h1>
+        <p data-i18n="hero_desc" class="text-lg text-slate-600 mb-10 max-w-lg leading-relaxed">
+          Trong khi số đông vội vã chạy quảng cáo và đối mặt với rủi ro lãng phí ngân sách, chúng tôi chọn bắt đầu từ gốc: Định hình chính xác chân dung khách hàng mục tiêu...
+        </p>
+        <div class="flex gap-4">
+          <a href="#contact" data-i18n="hero_cta1" class="bg-black text-white px-8 py-4 rounded-lg font-bold flex items-center gap-2 hover:bg-slate-800 transition-all">
+            Hợp Tác Ngay <span class="text-lg">→</span>
+          </a>
+          <a href="#expertise" data-i18n="hero_cta2" class="border border-slate-200 px-8 py-4 rounded-lg font-bold hover:bg-white transition-all">Xem Chuyên Môn</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="bg-slate-200 rounded-3xl aspect-[4/3] overflow-hidden shadow-2xl">
+          <img src="assets/genneral.jpg" alt="ibuituong" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-50">
+          <div data-i18n="hero_roi" class="text-slate-400 text-xs font-bold mb-1 uppercase">ROI Trung Bình</div>
+          <div class="text-3xl font-bold text-slate-900">+145%</div>
+        </div>
+      </div>
+    </header>
+
+    <section id="about" class="max-w-7xl mx-auto px-6 py-20">
+      <h2 data-i18n="about_title" class="text-4xl font-bold mb-12 text-slate-900">Về Tôi</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="md:col-span-2 bg-white p-8 md:p-10 rounded-3xl border border-slate-100 shadow-sm flex items-center">
+          <div class="text-slate-600 leading-relaxed text-lg space-y-5">
+            <p data-i18n="about_p1"></p>
+            <p data-i18n="about_p2"></p>
+            <p data-i18n="about_p3"></p>
+            <p data-i18n="about_p4"></p>
+          </div>
+        </div>
+        <div class="rounded-3xl overflow-hidden shadow-lg aspect-[4/3] md:aspect-auto md:h-full">
+          <img src="assets/introduce.jpg" alt="ibuituong" class="w-full h-full object-cover" />
+        </div>
+        <div class="bg-blue-50 p-8 rounded-3xl border border-blue-100 flex flex-col justify-center items-center">
+          <div class="text-5xl font-bold text-blue-600">2+</div>
+          <div data-i18n="about_exp" class="text-sm font-semibold text-blue-500 uppercase mt-2">Năm Kinh Nghiệm</div>
+        </div>
+        <div class="md:col-span-2 bg-slate-900 p-8 rounded-3xl text-white flex items-center justify-between">
+          <div>
+            <h3 data-i18n="about_val_title" class="text-slate-400 text-xs font-bold mb-4 uppercase tracking-wider">Tôn Chỉ</h3>
+            <div class="flex gap-8">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                <span data-i18n="about_val1" class="font-medium">Dữ liệu minh bạch</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 bg-blue-500 rounded-full"></span>
+                <span data-i18n="about_val2" class="font-medium">Kết quả thực tế</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise" class="bg-white py-24">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4">
+          <div>
+            <span data-i18n="exp_subtitle" class="text-blue-600 font-bold text-xs uppercase tracking-widest mb-4 block">DỊCH VỤ & KỸ NĂNG</span>
+            <h2 data-i18n="exp_title" class="text-4xl font-bold text-slate-900">Chuyên Môn Cốt Lõi</h2>
+          </div>
+          <p data-i18n="exp_desc" class="text-slate-500 max-w-sm leading-relaxed">Hệ thống kỹ năng được mài giũa qua các chiến dịch thực tế, tập trung vào hiệu quả chuyển đổi.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-6">
+          <div class="p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 bg-white group">
+            <div class="w-14 h-14 bg-blue-50/50 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.042 21.672 13.684 16.6m0 0-2.51 2.225.569-9.47 5.227 7.917-3.286-.672ZM12 2.25V4.5m5.834.166-1.591 1.591M20.25 10.5H18M7.757 14.743l-1.59 1.59M6 10.5H3.75m4.007-5.834-1.59-1.59" />
+              </svg>
+            </div>
+            <h3 data-i18n="exp_card1_title" class="text-xl font-bold mb-3 text-slate-900">Google Search Ads</h3>
+            <p data-i18n="exp_card1_desc" class="text-slate-500 text-sm leading-relaxed"></p>
+          </div>
+
+          <div class="p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 bg-white group">
+            <div class="w-14 h-14 bg-blue-50/50 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+              </svg>
+            </div>
+            <h3 data-i18n="exp_card2_title" class="text-xl font-bold mb-3 text-slate-900">Keyword Research</h3>
+            <p data-i18n="exp_card2_desc" class="text-slate-500 text-sm leading-relaxed"></p>
+          </div>
+
+          <div class="p-8 rounded-2xl border border-slate-100 hover:shadow-xl hover:shadow-blue-500/5 hover:-translate-y-1 transition-all duration-300 bg-white group">
+            <div class="w-14 h-14 bg-blue-50/50 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-7 h-7">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17 17.25 21A2.652 2.652 0 0 0 21 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-3.973-3.973c-1.365-1.365-3.576-1.365-4.94 0-1.365 1.364-1.365 3.575 0 4.94l3.973 3.973c1.365 1.365 3.576 1.365 4.94 0M11.42 15.17 9.49 13.24M17.25 21 13.24 17.01" />
+              </svg>
+            </div>
+            <h3 data-i18n="exp_card3_title" class="text-xl font-bold mb-3 text-slate-900">Landing Page</h3>
+            <p data-i18n="exp_card3_desc" class="text-slate-500 text-sm leading-relaxed"></p>
+          </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex items-center gap-5 hover:bg-white hover:shadow-md transition-all duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm text-slate-400 group-hover:text-blue-600 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+              </svg>
+            </div>
+            <div>
+              <div data-i18n="exp_subskill" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Kỹ năng bổ trợ</div>
+              <div class="font-bold text-slate-900">Video Production</div>
+            </div>
+          </div>
+          <div class="p-6 bg-slate-50 rounded-2xl border border-slate-100 flex items-center gap-5 hover:bg-white hover:shadow-md transition-all duration-300 group">
+            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm text-slate-400 group-hover:text-blue-600 transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+              </svg>
+            </div>
+            <div>
+              <div data-i18n="exp_subskill" class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">Kỹ năng bổ trợ</div>
+              <div class="font-bold text-slate-900">Content Strategy</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="partners" class="py-20 bg-slate-50">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 data-i18n="partner_title" class="text-3xl font-bold mb-4 text-slate-900">Các đối tác đã và đang hợp tác</h2>
+        <p data-i18n="partner_desc" class="text-slate-500 mb-12">Mạng lưới Affiliate Network chuyên nghiệp tại thị trường Việt Nam & Quốc tế.</p>
+        
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+            <span class="font-extrabold text-xl bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">ADPIA</span>
+          </div>
+          <div class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+            <span class="font-extrabold text-xl bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent">RENTRACK</span>
+          </div>
+          <div class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+            <span class="font-extrabold text-xl bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent">GOAFFPRO</span>
+          </div>
+          <div class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+            <span class="font-extrabold text-xl bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent">ACCESSTRADE</span>
+          </div>
+          <div class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+            <span class="font-extrabold text-xl bg-gradient-to-r from-red-500 to-rose-500 bg-clip-text text-transparent">MASOFFER</span>
+          </div>
+          <div class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+            <span class="font-extrabold text-xl bg-gradient-to-r from-pink-500 to-fuchsia-500 bg-clip-text text-transparent">ECOMOBI</span>
+          </div>
+          <div class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+            <span class="font-extrabold text-xl bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent">ADFLEX</span>
+          </div>
+          <div class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer">
+            <span class="font-extrabold text-xl bg-gradient-to-r from-purple-600 to-violet-500 bg-clip-text text-transparent">TERMATE</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="py-24 max-w-7xl mx-auto px-6 text-center">
+      <div class="bg-white p-12 md:p-20 rounded-[3rem] border border-slate-100 shadow-xl overflow-hidden relative group">
+        <div class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        <div class="relative z-10">
+          <div class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+            </svg>
+          </div>
+          <h2 data-i18n="contact_title" class="text-4xl md:text-5xl font-bold mb-6 text-slate-900 tracking-tight">Sẵn sàng tối ưu hóa ROI của bạn?</h2>
+          <p data-i18n="contact_desc" class="text-slate-500 max-w-2xl mx-auto mb-12 text-lg leading-relaxed">Hãy liên hệ để thảo luận về chiến lược dữ liệu và xây dựng phễu nội dung bền vững cho dự án tiếp theo.</p>
+
+          <div class="max-w-md mx-auto p-2 bg-slate-50/80 backdrop-blur-sm rounded-2xl border border-slate-200 flex flex-col md:flex-row gap-2 transition-all duration-300 hover:border-blue-200 hover:shadow-md">
+            <button onclick="copyEmail()" class="flex-1 px-4 py-3 text-slate-700 font-medium hover:text-blue-600 transition-colors flex items-center justify-center md:justify-start gap-2 group/copy" title="Sao chép địa chỉ email">
+              <span>ibutuong@gmail.com</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4 opacity-0 group-hover/copy:opacity-100 transition-opacity text-blue-500">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
+              </svg>
+            </button>
+            <a href="mailto:ibutuong@gmail.com" class="bg-slate-900 text-white px-8 py-3 rounded-xl font-bold hover:bg-blue-600 transition-colors flex items-center justify-center gap-2">
+              <span data-i18n="contact_btn">Gửi Email</span>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 19.5l15-15m0 0H8.25m11.25 0v11.25" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="py-12 border-t border-slate-100 text-center">
+      <div class="flex justify-center gap-6 text-xs text-slate-400 mb-8">
+        <a href="#home" data-i18n="nav_home" class="hover:text-blue-600 transition-colors">Trang chủ</a>
+        <a href="#about" data-i18n="nav_about" class="hover:text-blue-600 transition-colors">Về Tôi</a>
+        <a href="#expertise" data-i18n="nav_expertise" class="hover:text-blue-600 transition-colors">Chuyên Môn</a>
+        <a href="#partners" data-i18n="nav_partners" class="hover:text-blue-600 transition-colors">Đối Tác</a>
+        <a href="#contact" data-i18n="nav_contact" class="hover:text-blue-600 transition-colors">Liên Hệ</a>
+      </div>
+      <p data-i18n="footer_copy" class="text-xs text-slate-400 opacity-70">© 2026 Ibutuong. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

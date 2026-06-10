@@ -10,9 +10,9 @@ const translations = {
 
     // Hero Section
     hero_slogan: "Quảng cáo sạch - tăng trưởng xanh",
-    hero_title: "Nhà quảng cáo tập trung vào hiệu suất",
+    // hero_title: "Nhà quảng cáo tập trung vào hiệu suất",
     hero_desc:
-      "Trong khi số đông vội vã chạy quảng cáo và đối mặt với rủi ro lãng phí ngân sách, tôi chọn bắt đầu từ gốc: Định hình chính xác chân dung khách hàng mục tiêu. Tôi từ chối việc 'đốt tiền' vào những lượt click vô giá trị, để đảm bảo mỗi đồng chi ra đều mang về tỷ lệ chuyển đổi thực tế.",
+      "Trong khi số đông vội vã chạy quảng cáo và đối mặt với rủi ro lãng phí ngân sách, tôi chọn bắt đầu từ gốc: Định hình chính xác chân dung khách hàng mục tiêu và từ chối việc 'đốt tiền' vào những lượt click vô giá trị, để đảm bảo mỗi đồng chi ra đều mang về tỷ lệ chuyển đổi thực tế.",
     hero_cta1: "Hợp Tác Ngay <span class='text-lg'>→</span>",
     hero_cta2: "Xem Chuyên Môn",
     hero_roi: "ROI Trung Bình",
@@ -74,7 +74,7 @@ const translations = {
     hero_slogan: "Clean advertising - Green growth",
     hero_title: "Performance-Focused Advertiser",
     hero_desc:
-      "While the majority rush to run ads and face the risk of wasted budgets, I choose to start from the root: Accurately defining the target customer persona. I refuse to 'burn money' on worthless clicks, ensuring every penny spent brings actual conversion rates.",
+      "While the majority rush to run ads and face the risk of wasted budgets, I choose to start from the root: Accurately defining the target customer personal and refuse to 'burn money' on worthless clicks, ensuring every penny spent brings actual conversion rates.",
     hero_cta1: "Let's Collaborate <span class='text-lg'>→</span>",
     hero_cta2: "View Expertise",
     hero_roi: "Average ROI",

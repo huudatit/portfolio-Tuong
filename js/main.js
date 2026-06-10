@@ -6,6 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const openBtn = document.getElementById("menu-open-btn");
   const closeBtn = document.getElementById("menu-close-btn");
   const mobileLinks = document.querySelectorAll(".mobile-link");
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const sunIcon = document.getElementById("theme-toggle-sun");
+  const moonIcon = document.getElementById("theme-toggle-moon");
 
   const openMenu = () => {
     mobileMenu.classList.remove("translate-x-full");
@@ -40,4 +43,30 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Không thể sao chép email: ", err);
       });
   };
+
+  function updateThemeUI() {
+    if (document.documentElement.classList.contains("dark")) {
+      sunIcon.classList.remove("hidden");
+      moonIcon.classList.add("hidden");
+    } else {
+      sunIcon.classList.add("hidden");
+      moonIcon.classList.remove("hidden");
+    }
+  }
+
+  // Chạy kiểm tra UI ngay khi script tải xong
+  updateThemeUI();
+
+  if (themeToggleBtn) {
+    themeToggleBtn.addEventListener("click", () => {
+      if (document.documentElement.classList.contains("dark")) {
+        document.documentElement.classList.remove("dark");
+        localStorage.setItem("theme", "light");
+      } else {
+        document.documentElement.classList.add("dark");
+        localStorage.setItem("theme", "dark");
+      }
+      updateThemeUI();
+    });
+  }
 });

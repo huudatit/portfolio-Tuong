@@ -6,7 +6,97 @@
     <title>Bùi Ngọc Tường</title>
     <link rel="icon" type="image/png" href="assets/logo.png" />
     <link rel="apple-touch-icon" href="assets/favicon.png" />
+
+    <!-- Tailwind CSS Play CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Chống nhấp nháy giao diện (FOUC) & Cấu hình Dark Mode theo class -->
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              // Định nghĩa mở rộng nếu cần thiết
+            },
+          },
+        },
+      };
+
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!("theme" in localStorage) &&
+          window.matchMedia("(prefers-color-scheme: dark)").matches)
+      ) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    </script>
+
+    <!-- TỐI ƯU SEO THỰC THỂ NÂNG CAO (ENTITY SEO) -->
+    <meta
+      name="description"
+      content="Bùi Ngọc Tường - Chuyên gia Performance Marketing chuyên sâu về Google Search Ads, Keyword Research và tối ưu Landing Page chuyển đổi."
+    />
+    <meta
+      name="keywords"
+      content="Bùi Ngọc Tường, bùi ngọc tường, bui ngoc tuong, ibuituong, Google Ads, Performance Marketing, Affiliate Marketing"
+    />
+    <link rel="canonical" href="https://buingoctuong.info.vn/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Bùi Ngọc Tường | Performance Marketing Specialist"
+    />
+    <meta
+      property="og:description"
+      content="Quảng cáo sạch - Tăng trưởng xanh. Hệ thống giải pháp tối ưu hóa ROI bền vững."
+    />
+    <meta
+      property="og:image"
+      content="https://buingoctuong.info.vn/assets/genneral.jpg"
+    />
+    <meta property="og:url" content="https://buingoctuong.info.vn/" />
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Bùi Ngọc Tường | Performance Marketing Specialist"
+    />
+    <meta
+      property="twitter:description"
+      content="Quảng cáo sạch - Tăng trưởng xanh. Hệ thống giải pháp tối ưu hóa ROI bền vững."
+    />
+    <meta
+      property="twitter:image"
+      content="https://buingoctuong.info.vn/assets/genneral.jpg"
+    />
+
+    <!-- Google Structured Data (JSON-LD) cho Thực thể Person -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Bùi Ngọc Tường",
+        "alternateName": "ibuituong",
+        "jobTitle": "Performance Advertiser & Digital Marketer",
+        "url": "https://buingoctuong.info.vn",
+        "image": "https://buingoctuong.info.vn/assets/genneral.jpg",
+        "description": "Nhà quảng cáo tập trung vào hiệu suất với tư duy tối ưu chi phí và bám sát chuyển đổi thực tế.",
+        "knowsAbout": [
+          "Google Search Ads",
+          "Keyword Research",
+          "Landing Page Optimization",
+          "Performance Marketing",
+          "Affiliate Marketing"
+        ]
+      }
+    </script>
+
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
@@ -20,9 +110,13 @@
     <script src="js/main.js" defer></script>
   </head>
 
-  <body class="bg-[#f8f9ff] text-slate-900">
+  <!-- BODY -->
+  <body
+    class="bg-[#f8f9ff] text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-300"
+  >
+    <!-- NAVIGATION  -->
     <nav
-      class="sticky top-0 z-50 bg-white backdrop-blur-md border-b border-slate-100"
+      class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100 dark:bg-slate-900/90 dark:border-slate-800"
     >
       <div
         class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between"
@@ -35,49 +129,100 @@
           />
           <span
             class="font-paytone text-xl tracking-tighter bg-clip-text text-transparent"
-            style="background-image: linear-gradient(90deg, var(--brand-blue) 0%, var(--brand-gold) 100%)"
+            style="
+              background-image: linear-gradient(
+                90deg,
+                var(--brand-blue) 0%,
+                var(--brand-gold) 100%
+              );
+            "
           >
             Bùi Ngọc Tường
           </span>
         </a>
 
-        <div class="hidden md:flex gap-8 text-sm font-medium text-slate-500">
+        <!-- Nav Links -->
+        <div
+          class="hidden md:flex gap-8 text-sm font-medium text-slate-500 dark:text-slate-400"
+        >
           <a
             href="#home"
             data-i18n="nav_home"
-            class="hover:text-blue-600 transition-colors"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >Trang Chủ</a
           >
           <a
             href="#about"
             data-i18n="nav_about"
-            class="hover:text-blue-600 transition-colors"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >Về Tôi</a
           >
           <a
             href="#expertise"
             data-i18n="nav_expertise"
-            class="hover:text-blue-600 transition-colors"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >Chuyên Môn</a
           >
           <a
             href="#partners"
             data-i18n="nav_partners"
-            class="hover:text-blue-600 transition-colors"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >Đối Tác</a
           >
           <a
             href="#contact"
             data-i18n="nav_contact"
-            class="hover:text-blue-600 transition-colors"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >Liên Hệ</a
           >
         </div>
 
         <div class="flex items-center gap-4">
+          <!-- Theme Button -->
+          <button
+            id="theme-toggle"
+            class="flex items-center justify-center bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:border-slate-700 dark:text-slate-200 px-3 py-2 rounded-full text-sm font-bold transition-all shadow-sm"
+            title="Thay đổi giao diện"
+          >
+            <!-- Icon Mặt Trời -->
+            <svg
+              id="theme-toggle-sun"
+              class="w-5 h-5 text-amber-500 hidden"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2.25m0 13.5V21M5.25 12h-2.25m16.5 0h-2.25m-.172-6.972-1.591 1.591M6.82 17.18l-1.591 1.591m12.938 0-1.591-1.591M6.82 6.82 5.229 5.23M12 8.25a3.75 3.75 0 1 0 0 7.5 3.75 3.75 0 0 0 0-7.5Z"
+              />
+            </svg>
+
+            <!-- Icon Mặt Trăng -->
+            <svg
+              id="theme-toggle-moon"
+              class="w-5 h-5 text-slate-700 dark:text-slate-300"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z"
+              />
+            </svg>
+          </button>
+
+          <!-- Lang-toggle -->
           <button
             id="lang-toggle"
-            class="flex items-center gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 px-3 py-2 md:px-4 md:py-2.5 rounded-full text-sm font-bold transition-all shadow-sm"
+            class="flex items-center gap-2 bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 dark:bg-slate-800 dark:hover:bg-slate-700 dark:border-slate-700 dark:text-slate-200 px-3 py-2 md:px-4 md:py-2.5 rounded-full text-sm font-bold transition-all shadow-sm"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -85,7 +230,7 @@
               viewBox="0 0 24 24"
               stroke-width="1.5"
               stroke="currentColor"
-              class="w-5 h-5 text-blue-600"
+              class="w-5 h-5 text-blue-600 dark:text-blue-400"
             >
               <path
                 stroke-linecap="round"
@@ -96,9 +241,10 @@
             <span id="lang-text">VIE</span>
           </button>
 
+          <!-- Menu-open-btn -->
           <button
             id="menu-open-btn"
-            class="md:hidden text-slate-900 p-2 focus:outline-none"
+            class="md:hidden text-slate-900 dark:text-slate-100 p-2 focus:outline-none"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -119,14 +265,16 @@
       </div>
     </nav>
 
+    <!-- Mobile Menu -->
     <div
       id="mobile-menu"
-      class="fixed inset-y-0 right-0 z-[60] w-full max-w-sm bg-white shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col"
+      class="fixed inset-y-0 right-0 z-[60] w-full max-w-sm bg-white dark:bg-slate-900 shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col"
     >
+      <!-- Close Button -->
       <div class="flex justify-end p-6">
         <button
           id="menu-close-btn"
-          class="text-black-700 p-2 focus:outline-none hover:bg-slate-50 hover:text-blue-700 rounded-full transition-colors"
+          class="text-black-700 dark:text-slate-400 p-2 focus:outline-none hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-blue-700 rounded-full transition-colors"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -144,35 +292,39 @@
           </svg>
         </button>
       </div>
-      <div class="flex flex-col gap-8 px-10 pt-4 text-slate-500 font-medium">
+
+      <!-- Mobile Text Links -->
+      <div
+        class="flex flex-col gap-8 px-10 pt-4 text-slate-500 dark:text-slate-400 font-medium"
+      >
         <a
           href="#home"
           data-i18n="nav_home"
-          class="mobile-link text-lg hover:text-blue-600 transition-colors uppercase tracking-wide"
+          class="mobile-link text-lg hover:text-blue-600 dark:hover:text-blue-400 transition-colors uppercase tracking-wide"
           >Trang chủ</a
         >
         <a
           href="#about"
           data-i18n="nav_about"
-          class="mobile-link text-lg hover:text-blue-600 transition-colors uppercase tracking-wide"
+          class="mobile-link text-lg hover:text-blue-600 dark:hover:text-blue-400 transition-colors uppercase tracking-wide"
           >Về Tôi</a
         >
         <a
           href="#expertise"
           data-i18n="nav_expertise"
-          class="mobile-link text-lg hover:text-blue-600 transition-colors uppercase tracking-wide"
+          class="mobile-link text-lg hover:text-blue-600 dark:hover:text-blue-400 transition-colors uppercase tracking-wide"
           >Chuyên Môn</a
         >
         <a
           href="#partners"
           data-i18n="nav_partners"
-          class="mobile-link text-lg hover:text-blue-600 transition-colors uppercase tracking-wide"
+          class="mobile-link text-lg hover:text-blue-600 dark:hover:text-blue-400 transition-colors uppercase tracking-wide"
           >Đối Tác</a
         >
         <a
           href="#contact"
           data-i18n="nav_contact"
-          class="mobile-link text-lg hover:text-blue-600 transition-colors uppercase tracking-wide"
+          class="mobile-link text-lg hover:text-blue-600 dark:hover:text-blue-400 transition-colors uppercase tracking-wide"
           >Liên Hệ</a
         >
       </div>
@@ -182,13 +334,19 @@
       class="fixed inset-0 bg-slate-900/50 backdrop-blur-sm z-[55] hidden md:hidden transition-opacity opacity-0"
     ></div>
 
-    <header id="home" class="bg-white/80 border-b border-slate-50">
+    <!-- HEADER -->
+    <header
+      id="home"
+      class="bg-white/80 dark:bg-slate-900/30 border-b border-slate-50 dark:border-slate-800/50"
+    >
       <div
         class="max-w-7xl mx-auto px-6 py-16 md:py-24 grid md:grid-cols-2 gap-12 items-center"
       >
         <div>
           <div class="mb-6">
-            <span class="font-paytone text-blue-600 text-4xl md:text-5xl tracking-wide mb-4 block">
+            <span
+              class="font-paytone text-blue-600 dark:text-blue-400 text-4xl md:text-5xl tracking-wide mb-4 block"
+            >
               Bùi Ngọc Tường
             </span>
 
@@ -199,11 +357,14 @@
               Quảng cáo sạch - Tăng trưởng xanh
             </div>
           </div>
-          <h1 data-i18n="hero_title" class="text-5xl md:text-3xl font-bold leading-tight mb-6">
-            Nhà quảng cáo tập trung vào hiệu suất
-          </h1>
-          <p data-i18n="hero_desc" class="text-lg text-slate-600 mb-10 max-w-lg leading-relaxed">
-            Trong khi số đông vội vã chạy quảng cáo và đối mặt với rủi ro lãng phí ngân sách...
+
+          <!-- Description -->
+          <p
+            data-i18n="hero_desc"
+            class="text-lg text-slate-600 dark:text-slate-400 mb-10 max-w-lg leading-relaxed"
+          >
+            Trong khi số đông vội vã chạy quảng cáo và đối mặt với rủi ro lãng
+            phiếu ngân sách...
           </p>
           <div class="flex gap-4">
             <a
@@ -213,10 +374,12 @@
             >
               Hợp Tác Ngay <span class="text-lg">→</span>
             </a>
+
+            <!-- cta2 Button -->
             <a
               href="#expertise"
               data-i18n="hero_cta2"
-              class="border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-lg font-bold hover:border-[var(--brand-gold)] hover:text-[var(--brand-blue)] transition-all bg-white"
+              class="border-2 border-slate-200 text-slate-700 dark:border-slate-700 dark:text-slate-300 px-8 py-4 rounded-lg font-bold hover:border-[var(--brand-gold)] hover:text-[var(--brand-blue)] dark:hover:text-blue-400 transition-all bg-white dark:bg-slate-900"
             >
               Xem Chuyên Môn
             </a>
@@ -225,20 +388,23 @@
 
         <div class="relative">
           <div
-            class="bg-slate-200 rounded-3xl aspect-[4/3] overflow-hidden shadow-2xl"
+            class="bg-slate-200 dark:bg-slate-800 rounded-3xl aspect-[4/3] overflow-hidden shadow-2xl"
           >
             <img
               src="assets/genneral.jpg"
-              alt="ibuituong"
+              alt="Bùi Ngọc Tường"
               class="w-full h-full object-cover"
             />
           </div>
+
+          <!-- ROI Badge -->
           <div
-            class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-xl border border-slate-50"
+            class="absolute -bottom-6 -left-6 bg-white dark:bg-slate-900 p-6 rounded-2xl shadow-xl border border-slate-50 dark:border-slate-800"
           >
+            <!-- Stat Label -->
             <div
               data-i18n="hero_roi"
-              class="text-slate-400 text-xs font-bold mb-1 uppercase"
+              class="text-slate-400 dark:text-slate-500 text-xs font-bold mb-1 uppercase"
             >
               ROI Trung Bình
             </div>
@@ -248,21 +414,29 @@
       </div>
     </header>
 
-    <section id="about" class="bg-[#f8f9ff] border-b border-slate-100 py-20">
+    <!-- ABOUT -->
+    <section
+      id="about"
+      class="bg-[#f8f9ff] dark:bg-slate-950/20 border-b border-slate-100 dark:border-slate-900 py-20"
+    >
       <div class="max-w-7xl mx-auto px-6">
+        <!-- Title -->
         <h2
           data-i18n="about_title"
-          class="text-4xl font-bold mb-12 text-slate-900"
+          class="text-4xl font-bold mb-12 text-slate-900 dark:text-slate-100"
         >
           Về Tôi
         </h2>
 
+        <!-- About Card -->
         <div
-          class="bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden mb-8"
+          class="bg-white dark:bg-slate-900 rounded-3xl border border-slate-100 dark:border-slate-800 shadow-sm overflow-hidden mb-8"
         >
           <div class="grid grid-cols-1 md:grid-cols-2 items-stretch">
             <div class="p-8 md:p-12 flex items-center">
-              <div class="text-slate-600 leading-relaxed text-lg space-y-5">
+              <div
+                class="text-slate-600 dark:text-slate-300 leading-relaxed text-lg space-y-5"
+              >
                 <p data-i18n="about_p1"></p>
                 <p data-i18n="about_p2"></p>
                 <p data-i18n="about_p3"></p>
@@ -273,7 +447,7 @@
             <div class="h-full relative min-h-[300px] md:min-h-full">
               <img
                 src="assets/introduce.jpg"
-                alt="ibuituong"
+                alt="Bùi Ngọc Tường"
                 class="absolute inset-0 w-full h-full object-cover"
               />
             </div>
@@ -281,8 +455,9 @@
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+          <!-- Brand Card -->
           <div
-            class="brand-card-dark p-8 rounded-3xl border border-blue-100 flex flex-col justify-center items-center"
+            class="brand-card-dark p-8 rounded-3xl border border-blue-100 dark:border-slate-800 flex flex-col justify-center items-center"
           >
             <div class="text-5xl font-bold brand-gold-text">2+</div>
             <div
@@ -323,7 +498,8 @@
       </div>
     </section>
 
-    <section id="expertise" class="bg-white/80 py-24">
+    <!-- EXPERTISE -->
+    <section id="expertise" class="bg-white/80 dark:bg-slate-950/40 py-24">
       <div class="max-w-7xl mx-auto px-6">
         <div
           class="flex flex-col md:flex-row justify-between items-start md:items-end mb-16 gap-4"
@@ -331,16 +507,24 @@
           <div>
             <span
               data-i18n="exp_subtitle"
-              class="font-bold text-xs uppercase tracking-widest mb-4 block" style="color:var(--brand-blue)"
+              class="font-bold text-xs uppercase tracking-widest mb-4 block"
+              style="color: var(--brand-blue)"
               >DỊCH VỤ & KỸ NĂNG</span
             >
-            <h2 data-i18n="exp_title" class="text-4xl font-bold text-slate-900">
+
+            <!-- Header Title -->
+            <h2
+              data-i18n="exp_title"
+              class="text-4xl font-bold text-slate-900 dark:text-slate-100"
+            >
               Chuyên Môn Cốt Lõi
             </h2>
           </div>
+
+          <!-- Body Text -->
           <p
             data-i18n="exp_desc"
-            class="text-slate-500 max-w-sm leading-relaxed"
+            class="text-slate-500 dark:text-slate-400 max-w-sm leading-relaxed"
           >
             Hệ thống kỹ năng được mài giũa qua các chiến dịch thực tế, tập trung
             vào hiệu quả chuyển đổi.
@@ -348,8 +532,14 @@
         </div>
 
         <div class="grid md:grid-cols-3 gap-6 mb-6">
-          <div class="expertise-card p-8 rounded-2xl border-2 border-slate-50 hover:-translate-y-1 transition-all duration-300 bg-white group">
-            <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:bg-[var(--brand-navy)] group-hover:text-white transition-colors duration-300">
+          <!-- Expertise Cards -->
+          <div
+            class="expertise-card p-8 rounded-2xl border-2 border-slate-50 dark:border-slate-800/80 hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900 group"
+          >
+            <!-- Icon Containers -->
+            <div
+              class="w-14 h-14 bg-blue-50 dark:bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400 group-hover:bg-[var(--brand-navy)] group-hover:text-white transition-colors duration-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -365,20 +555,26 @@
                 />
               </svg>
             </div>
+
+            <!-- Card Titles -->
             <h3
               data-i18n="exp_card1_title"
-              class="text-xl font-bold mb-3 text-slate-900"
+              class="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100"
             >
               Google Search Ads
             </h3>
             <p
               data-i18n="exp_card1_desc"
-              class="text-slate-500 text-sm leading-relaxed"
+              class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed"
             ></p>
           </div>
 
-          <div class="expertise-card p-8 rounded-2xl border-2 border-slate-50 hover:-translate-y-1 transition-all duration-300 bg-white group">
-            <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:bg-[var(--brand-navy)] group-hover:text-white transition-colors duration-300">
+          <div
+            class="expertise-card p-8 rounded-2xl border-2 border-slate-50 dark:border-slate-800/80 hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900 group"
+          >
+            <div
+              class="w-14 h-14 bg-blue-50 dark:bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400 group-hover:bg-[var(--brand-navy)] group-hover:text-white transition-colors duration-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -396,18 +592,22 @@
             </div>
             <h3
               data-i18n="exp_card2_title"
-              class="text-xl font-bold mb-3 text-slate-900"
+              class="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100"
             >
               Keyword Research
             </h3>
             <p
               data-i18n="exp_card2_desc"
-              class="text-slate-500 text-sm leading-relaxed"
+              class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed"
             ></p>
           </div>
 
-          <div class="expertise-card p-8 rounded-2xl border-2 border-slate-50 hover:-translate-y-1 transition-all duration-300 bg-white group">
-            <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:bg-[var(--brand-navy)] group-hover:text-white transition-colors duration-300">
+          <div
+            class="expertise-card p-8 rounded-2xl border-2 border-slate-50 dark:border-slate-800/80 hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900 group"
+          >
+            <div
+              class="w-14 h-14 bg-blue-50 dark:bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400 group-hover:bg-[var(--brand-navy)] group-hover:text-white transition-colors duration-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -425,20 +625,24 @@
             </div>
             <h3
               data-i18n="exp_card3_title"
-              class="text-xl font-bold mb-3 text-slate-900"
+              class="text-xl font-bold mb-3 text-slate-900 dark:text-slate-100"
             >
               Landing Page
             </h3>
             <p
               data-i18n="exp_card3_desc"
-              class="text-slate-500 text-sm leading-relaxed"
+              class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed"
             ></p>
           </div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6">
-          <div class="expertise-card p-8 rounded-2xl border-2 border-slate-50 hover:-translate-y-1 transition-all duration-300 bg-white group">
-            <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:bg-[var(--brand-navy)] group-hover:text-white transition-colors duration-300">
+          <div
+            class="expertise-card p-8 rounded-2xl border-2 border-slate-50 dark:border-slate-800/80 hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900 group"
+          >
+            <div
+              class="w-14 h-14 bg-blue-50 dark:bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400 group-hover:bg-[var(--brand-navy)] group-hover:text-white transition-colors duration-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -456,15 +660,22 @@
             <div>
               <div
                 data-i18n="exp_subskill"
-                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1"
+                class="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1"
               >
                 Kỹ năng bổ trợ
               </div>
-              <div class="font-bold text-slate-900">Video Production</div>
+              <div class="font-bold text-slate-900 dark:text-slate-100">
+                Video Production
+              </div>
             </div>
           </div>
-          <div class="expertise-card p-8 rounded-2xl border-2 border-slate-50 hover:-translate-y-1 transition-all duration-300 bg-white group">
-            <div class="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-6 text-blue-600 group-hover:bg-[var(--brand-navy)] group-hover:text-white transition-colors duration-300">
+
+          <div
+            class="expertise-card p-8 rounded-2xl border-2 border-slate-50 dark:border-slate-800/80 hover:-translate-y-1 transition-all duration-300 bg-white dark:bg-slate-900 group"
+          >
+            <div
+              class="w-14 h-14 bg-blue-50 dark:bg-slate-800 rounded-xl flex items-center justify-center mb-6 text-blue-600 dark:text-blue-400 group-hover:bg-[var(--brand-navy)] group-hover:text-white transition-colors duration-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -483,33 +694,43 @@
             <div>
               <div
                 data-i18n="exp_subskill"
-                class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1"
+                class="text-[10px] font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest mb-1"
               >
                 Kỹ năng bổ trợ
               </div>
-              <div class="font-bold text-slate-900">Content Strategy</div>
+              <div class="font-bold text-slate-900 dark:text-slate-100">
+                Content Strategy
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="partners" class="py-20 bg-slate-50">
+    <!-- PARTNERS -->
+    <section id="partners" class="py-20 bg-slate-50 dark:bg-slate-950/40">
       <div class="max-w-7xl mx-auto px-6 text-center">
+        <!-- Title -->
         <h2
           data-i18n="partner_title"
-          class="text-3xl font-bold mb-4 text-slate-900"
+          class="text-3xl font-bold mb-4 text-slate-900 dark:text-slate-100"
         >
           Các đối tác đã và đang hợp tác
         </h2>
-        <p data-i18n="partner_desc" class="text-slate-500 mb-12">
+
+        <!-- Description -->
+        <p
+          data-i18n="partner_desc"
+          class="text-slate-500 dark:text-slate-400 mb-12"
+        >
           Mạng lưới Affiliate Network chuyên nghiệp tại thị trường Việt Nam &
           Quốc tế.
         </p>
 
         <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <!-- Partner Cards-->
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent"
@@ -517,7 +738,7 @@
             >
           </div>
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-orange-500 to-amber-400 bg-clip-text text-transparent"
@@ -525,7 +746,7 @@
             >
           </div>
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent"
@@ -533,7 +754,7 @@
             >
           </div>
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent"
@@ -541,7 +762,7 @@
             >
           </div>
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-red-500 to-rose-500 bg-clip-text text-transparent"
@@ -549,7 +770,7 @@
             >
           </div>
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-pink-500 to-fuchsia-500 bg-clip-text text-transparent"
@@ -557,7 +778,7 @@
             >
           </div>
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-emerald-600 to-teal-500 bg-clip-text text-transparent"
@@ -565,7 +786,7 @@
             >
           </div>
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-purple-600 to-violet-500 bg-clip-text text-transparent"
@@ -573,7 +794,7 @@
             >
           </div>
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent"
@@ -581,7 +802,7 @@
             >
           </div>
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent"
@@ -589,7 +810,7 @@
             >
           </div>
           <div
-            class="bg-white p-8 rounded-xl flex items-center justify-center border border-slate-100 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
+            class="bg-white dark:bg-slate-900 p-8 rounded-xl flex items-center justify-center border border-slate-100 dark:border-slate-800 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg cursor-pointer"
           >
             <span
               class="font-extrabold text-xl bg-gradient-to-r from-green-500 to-emerald-400 bg-clip-text text-transparent"
@@ -600,17 +821,21 @@
       </div>
     </section>
 
+    <!-- CONTACT -->
     <section id="contact" class="py-24 max-w-7xl mx-auto px-6 text-center">
+      <!-- Contact Container -->
       <div
-        class="bg-white p-12 md:p-20 rounded-[3rem] border border-slate-100 shadow-xl overflow-hidden relative group"
+        class="bg-white dark:bg-slate-900 p-12 md:p-20 rounded-[3rem] border border-slate-100 dark:border-slate-800 shadow-xl overflow-hidden relative group"
       >
+        <!-- Overlay glow background -->
         <div
-          class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
+          class="absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent dark:from-slate-800/40 dark:to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"
         ></div>
 
         <div class="relative z-10">
+          <!-- Envelope Icon wrapper -->
           <div
-            class="w-20 h-20 bg-blue-50 text-blue-600 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner"
+            class="w-20 h-20 bg-blue-50 dark:bg-slate-800 text-blue-600 dark:text-blue-400 rounded-full flex items-center justify-center mx-auto mb-8 shadow-inner"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -628,27 +853,31 @@
             </svg>
           </div>
 
+          <!-- Title -->
           <h2
             data-i18n="contact_title"
-            class="text-4xl md:text-5xl font-bold mb-6 text-slate-900 tracking-tight"
+            class="text-4xl md:text-5xl font-bold mb-6 text-slate-900 dark:text-slate-100 tracking-tight"
           >
             Sẵn sàng tối ưu hóa ROI của bạn?
           </h2>
 
+          <!-- Description -->
           <p
             data-i18n="contact_desc"
-            class="text-slate-500 max-w-2xl mx-auto mb-12 text-lg leading-relaxed"
+            class="text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-12 text-lg leading-relaxed"
           >
             Hãy liên hệ để thảo luận về chiến lược dữ liệu và xây dựng phễu nội
             dung bền vững cho dự án tiếp theo.
           </p>
 
+          <!-- Contact Card wrapper-->
           <div
-            class="max-w-md mx-auto p-2 bg-slate-50/80 backdrop-blur-sm rounded-2xl border border-slate-200 flex flex-col md:flex-row gap-2 transition-all duration-300 hover:border-gold hover:shadow-md contact-card"
+            class="max-w-md mx-auto p-2 bg-slate-50/80 dark:bg-slate-950 backdrop-blur-sm rounded-2xl border border-slate-200 dark:border-slate-700 flex flex-col md:flex-row gap-2 transition-all duration-300 hover:border-gold hover:shadow-md contact-card"
           >
+            <!-- Email -->
             <button
               onclick="copyEmail()"
-              class="flex-1 px-4 py-3 text-slate-700 font-medium hover:text-blue-600 transition-colors flex items-center justify-center md:justify-start gap-2 group/copy"
+              class="flex-1 px-4 py-3 text-slate-700 dark:text-slate-300 font-medium hover:text-blue-600 dark:hover:text-blue-400 transition-colors flex items-center justify-center md:justify-start gap-2 group/copy"
               title="Sao chép địa chỉ email"
             >
               <span>ibutuong@gmail.com</span>
@@ -695,42 +924,50 @@
       </div>
     </section>
 
-    <footer class="bg-white py-12 border-t border-slate-100 text-center">
+    <!-- FOOTER -->
+    <footer
+      class="bg-white dark:bg-slate-950 py-12 border-t border-slate-100 dark:border-slate-900 text-center"
+    >
       <div class="max-w-7xl mx-auto px-6">
-        <div class="flex justify-center gap-6 text-xs text-slate-400 mb-8">
+        <div
+          class="flex justify-center gap-6 text-xs text-slate-400 dark:text-white mb-8"
+        >
           <a
             href="#home"
             data-i18n="nav_home"
-            class="hover:text-blue-600 transition-colors"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >Trang chủ</a
           >
           <a
             href="#about"
             data-i18n="nav_about"
-            class="hover:text-blue-600 transition-colors"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >Về Tôi</a
           >
           <a
             href="#expertise"
             data-i18n="nav_expertise"
-            class="hover:text-blue-600 transition-colors"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >Chuyên Môn</a
           >
           <a
             href="#partners"
             data-i18n="nav_partners"
-            class="hover:text-blue-600 transition-colors"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >Đối Tác</a
           >
           <a
             href="#contact"
             data-i18n="nav_contact"
-            class="hover:text-blue-600 transition-colors"
+            class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
             >Liên Hệ</a
           >
         </div>
 
-        <p data-i18n="footer_copy" class="text-xs text-slate-900 opacity-70">
+        <p
+          data-i18n="footer_copy"
+          class="text-xs text-slate-900 dark:text-white opacity-70"
+        >
           ©2026 BuiNgocTuong. All rights reserved.
         </p>
       </div>
